@@ -6,6 +6,11 @@ var rs = require ('readline-sync');
 
 var numero = rs.questionInt('Digite um numero: ');
 
-var calculo = new ehprimo(numero);
 
-console.log(calculo) // quase terminado
+if (ehprimo (numero)) {
+    console.log(`${numero} eh primo`);
+} else {
+    console.log(`${numero} nao eh primo`);
+} 
+
+// Finalizado

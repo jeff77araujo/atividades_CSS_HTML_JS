@@ -7,11 +7,11 @@ var rs = require ('readline-sync');
 
 var numero = rs.questionInt('Digite um numero: ');
 
-var calculo = isOdd(numero);
+// var calculo = isOdd(numero);
 
-if (isOdd (true)) {
+if (isOdd (numero)) {
     console.log(`${numero} impar`);
 } else {
     console.log(`${numero} par`);
 } 
-// quase terminado
+// Finalizado

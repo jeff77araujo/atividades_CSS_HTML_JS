@@ -9,25 +9,34 @@
 // Caso o usuário opte por descriptografar o algoritmo deve fazer a engenharia reversa e
 // retorna ao valor antes de criptografia.
 // Utilize todo o conhecimento até aqui pra desenvolver este algoritmo
+// ______________________________________________FINALIZADO_____________________________________________________________
 
-var palavra 
-var temp = 0
-var cifra = []
-const cesar = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','A','B','C']
-var rs = require('readline-sync')
-palavra = rs.question('Digite uma palavra : ')
+var rs = require('readline-sync');
 
-for(i = 0;i < palavra.length;i++){
- temp = cesar.indexOf(palavra[i])
-cifra.push(cesar[temp+3])
+var querCriptografar = rs.keyInYN('Quer criptografar (Y) ou descriptografar (N)?');
+var alfabeto = 'ABCDEFGHIJKLMNOPQRSTUVWXYZABC';
 
+// ['A', 'B', 'C', 'D' ... 'C']
+// ['A', 'r', 'b', 'y', 't', 'e']
+if (querCriptografar) {
+	// criptografa
+	var palavra = rs.question('Digite uma palavra para criptografar: ').toUpperCase().split('');
+	for (var i = 0; i < palavra.length; i++) {
+		var letra = palavra[i];
+		var indiceNoAlfabeto = alfabeto.indexOf(letra);
+		var indiceNovo = indiceNoAlfabeto + 3;
+		palavra[i] = alfabeto.charAt(indiceNovo);
+	}
+	console.log('Palavra cifrada:', palavra.join(''));
+} else {
+	// descriptografa
+	var palavra = rs.question('Digite uma palavra para descriptografar: ').toUpperCase().split('');
+	for (var i = 0; i < palavra.length; i++) {
+		var letra = palavra[i];
+		var indiceNoAlfabeto = alfabeto.indexOf(letra, 3);
+		var indiceNovo = indiceNoAlfabeto - 3;
+		palavra[i] = alfabeto.charAt(indiceNovo);
+	}
+	console.log('Palavra descifrada:', palavra.join(''));
 }
-console.log(cifra.join(""))
-
-for(i = 0;i < palavra.length;i++){
-    temp = cesar.indexOf(palavra[i],3)
-   cifra.push(cesar[temp-3])
-   
-   }
-   console.log(cifra.join(""))
 

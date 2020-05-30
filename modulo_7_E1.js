@@ -2,7 +2,8 @@
 // média no final.
 // Utilize o pacote : https://www.npmjs.com/package/median
 
-var median = require ('median');
+var median = require ('median'); // tira a mediana
+var average = require ('average') // tira a média
 var rs = require ('readline-sync');
 
 var notas = [];
@@ -13,5 +14,6 @@ for (var i = 0; i < 4; i++) {
     notas[i] = nota;
 }
 
-var mediaCalculada = median(notas);
-console.log(`A media é ${mediaCalculada}`)  // Finalizado
+var mediaCalculada = average(notas);
+var medianaCalculada = median(notas)
+console.log(`A media é ${mediaCalculada} e a mediana é ${medianaCalculada}`)  // Finalizado

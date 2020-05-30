@@ -1,22 +1,17 @@
-/*
-*/
+// Faça uma função que recebe por parâmetro o raio de uma esfera e calcula o seu
+// volume (v = 4/3.pi.R
+// 3
+// ).
 
+// Então solicite ao usuário o raio da esfera e utilize a função para exibir o resultado.
 
-function converteIdadeParaDias(idade){
-    totalDias = idade[0]*365 + idade[1]*30 + idade[2]
-    return totalDias
+var rs = require ('readline-sync')
+var valorRaio = rs.questionFloat('Digite o valor do raio de uma esfera: ')
+
+function calculovolume (raio) {
+    return  4 / 3 * 3.14 * (raio**3)/3
+    
 }
+console.log(calculovolume(valorRaio))
 
-var rs = require('readline-sync')
-
-var velhice = []
-
-velhice[0] = rs.questionInt('Quantos anos?')
-velhice[1] = rs.questionInt('Quantos meses?')
-velhice[2] = rs.questionInt('Quantos dias?')
-
-console.log(velhice)
-var diasTotais = converteIdadeParaDias(velhice)
-
-console.log(diasTotais)
-console.log(converteIdadeParaDias(velhice))
+// Finalizado

@@ -4,6 +4,7 @@
 // O algoritmo imprime :
 // Bnn
 // Utilize o método split() para quebrar a string e depois montar ela sem vogais.
+// ___________________________________________________________________________________________________________
 
 var rs = require('readline-sync')
 var palavra = rs.question('Digite uma palavra: ')
