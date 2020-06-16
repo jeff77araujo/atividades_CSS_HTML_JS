@@ -9,24 +9,45 @@ Ao final o algoritmo deve iterar pelo array de alunos e descobrir quais são os 
 com maior idade e imprimir seus nomes */
 //______________________________________________FINALIZADO_______________________________________________
 var rs = require('readline-sync');
-var maiorIdade = []
+var alunos = []
+
 class Aluno {
     constructor(nome, idade) {
         this.nome = nome;
         this.idade = idade;
     }
 }
+
 function cadastrarAluno() {
     var primeiroAluno = new Aluno(
-        this.nome = rs.question('Insira o nome do aluno'),
-        this.idade = rs.question('Insira a idade do aluno'),
+        this.nome = rs.question('Insira o nome do aluno: '),
+        this.idade = rs.question('Insira a idade do aluno: '),
     )
     return primeiroAluno;
 }
 for (var i = 0; i < 3; i++) {
-    maiorIdade.push(cadastrarAluno())
+    alunos.push(cadastrarAluno())
 }
-console.log(maiorIdade)
+console.log(alunos)
+
+var maiorIdadeEntreTodos = 0
+
+for (var i = 0; i < alunos.length; i++) {
+    var idadeAtual = alunos[i].idade
+    if (idadeAtual > maiorIdadeEntreTodos) {
+        maiorIdadeEntreTodos = idadeAtual
+    }
+}
+console.log(`Maior idade encontrada é ${maiorIdadeEntreTodos}`)
+
+for (var i = 0; i < alunos.length; i++){
+    if (maiorIdadeEntreTodos == alunos[i].idade){
+        console.log("Maior idade é do", alunos[i])
+    }
+}
+
+
+
 /*método trabalhoso, manual 
  if (maiorIdade[0].idade >= maiorIdade[1].idade && maiorIdade[0].idade >= maiorIdade[2].idade) {
      console.log('a maior idade e ', maiorIdade[0])
@@ -38,17 +59,3 @@ console.log(maiorIdade)
     console.log('a maior idade e ', maiorIdade[2])
  }
  */
-
-var maiorIdadeEntreTodos = 0
-for (var i = 0; i < maiorIdade.length; i++) {
-    var idadeAtual = maiorIdade[i].idade
-    if (idadeAtual > maiorIdadeEntreTodos) {
-        maiorIdadeEntreTodos = idadeAtual
-    }
-}
-console.log(maiorIdadeEntreTodos)
-for (var i = 0; i < maiorIdade.length; i++){
-    if (maiorIdadeEntreTodos == maiorIdade[i].idade){
-        console.log("o aluno de maior idade é", maiorIdade[i])
-    }
-}

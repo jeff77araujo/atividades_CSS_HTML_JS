@@ -6,8 +6,16 @@
 // números, utilize o módulo criado para calcular a média e no final imprima o resultado
 // para o usuário.
 
-var media = require('average')
-var rs = require('readline-sync')
+var biblioteca = require('./calcula-media')
 
+var n1 = rs.questionInt('Quantas numeros voce quer somar? ')
+var n2 = rs.questionInt('Quantas numeros voce quer somar? ')
+var n3 = rs.questionInt('Quantas numeros voce quer somar? ')
 
+while (cont < quantidade) {
+     var dados = rs.questionInt('> ')
+     numeros.push(dados)
+}
+var resultado = biblioteca.calculaMedia(n1, n2, n3)
 
+console.log(resultado)

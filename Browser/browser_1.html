@@ -1,0 +1,31 @@
+<!-- Crie uma página HTML com um cabeçalho h1 e um botão. Ao clicar no botão,
+altere o texto do cabeçalho para “A mágica continua!”. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade DOM Ex.1</title>
+</head>
+<body>
+
+    <h1 id="cabecalho">Você deseja mudar a mensagem?</h1>
+    <button onclick="fazMudar()">Mudar agora</button>
+    <input type="text">
+
+    <script>
+        var cont = 1
+        function fazMudar() {
+            var h1 = document.getElementById("cabecalho")
+            console.log(h1)
+            // var frase = prompt('Escreva uma frase para a mágica continuar: ')
+            h1.innerText = 'Agora a mensagem mudou!'
+        }
+
+
+    </script>
+    
+</body>
+</html>
+<!-- Finalizado -->

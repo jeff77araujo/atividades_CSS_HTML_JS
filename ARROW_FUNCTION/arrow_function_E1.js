@@ -5,17 +5,14 @@
 // google.
 // __________________________________________________FINALIZADO_____________________________________________________
 
-var fs= require("fs")
-var rs = require('readline-sync')
-var caminhoObj = "nova_data/cars.json"
-var objetoDeserializado = fs.readFileSync(caminhoObj)
-var carros = JSON.parse(objetoDeserializado)
+// var fs = require("fs");
+var rs = require('readline-sync');
+var carroPeloRequire = require('./nova_data/cars.json') // serve apenas para visualizar, não tem como atualizar.
 
-var filtro = rs.questionInt('Informa a potencia do carro: ')
-var carrosFiltrados = carros.filter( (carro) => {
-    if (carro.Horsepower > filtro) {
-        return true
-    }
-})
+// var caminhoObj = "nova_data/cars.json"
+// var objetoDeserializado = fs.readFileSync(caminhoObj);
+// var carros = JSON.parse(objetoDeserializado);
 
-console.log(carrosFiltrados.length)
+var hp = rs.questionInt('Informa a potencia do carro: ');
+var carrosFiltrados = carroPeloRequire.filter( (carro) => carro.Horsepower >= hp );
+console.log(carrosFiltrados.length);
