@@ -10,8 +10,9 @@ axios.get(apiCovid)
         dadosPorEstado.forEach((uf) => {
             if (uf.state == nomeDoEstado) {
                 console.log(uf)
-            } else {
-                console.log('Erro!')
-            }
+            } 
+            // else {
+            //     console.log('Erro!')
+            // }
         })
     })

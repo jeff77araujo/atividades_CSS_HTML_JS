@@ -37,7 +37,7 @@ function consultaCarros() {
         if (erro) {
             console.log(erro.message);
         }
-        listaDeCarros.forEach(carro => console.log(carro));
+        listaDeCarros.forEach(carro => console.table(carro));
         menu ()
     })
 }

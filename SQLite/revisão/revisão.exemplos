@@ -1,0 +1,35 @@
+-- .\sqlite3.exe nomedobanco.db (windows)
+
+CREATE TABLE Alunos (nome TEXT, turma INTEGER, idade INTEGER, id INTEGER);
+
+INSERT INTO Alunos (nome, turma, idade, id) VALUES ('Jeff', 1, 27, 1);
+INSERT INTO Alunos (nome, idade, id, turma) VALUES ('julio', 27, 2, 1);
+INSERT INTO Alunos (nome, idade, id, turma) VALUES ('Aline', 21, 3, 1);
+INSERT INTO Alunos (nome, idade, id, turma) VALUES ('PH', 30, 4, 1);
+INSERT INTO Alunos (nome, idade, id, turma) VALUES ('Bruna', 34, 5, 1);
+INSERT INTO Alunos (nome, idade, id, turma) VALUES ('Ingridi', 25, 6, 1);
+INSERT INTO Alunos (nome, idade, id, turma) VALUES ('Max', 33, 7, 1);
+
+SELECT * FROM Alunos;
+SELECT * FROM Aluno WHERE idade >= 30;
+SELECT * FROM Aluno WHERE idade <= 30 AND idade >= 27;
+SELECT * FROM Aluno WHERE id = 1 OR id >= 5;
+
+SELECT * FROM Alunos WHERE idade BETWEEN 27 AND 30;
+
+SELECT nome, idade FROM Alunos WHERE idade > 21;
+SELECT * FROM Alunos WHERE id IN (1, 3, 5);
+
+SELECT id, nome FROM Alunos WHERE nome = 'Julio' or nome = 'Jeff'
+SELECT id, nome FROM Alunos WHERE nome LIKE 'J%';
+SELECT id, nome FROM Alunos WHERE nome LIKE '%i%';
+SELECT id, nome FROM Alunos WHERE nome LIKE '_u%';
+SELECT id, nome FROM Alunos WHERE nome LIKE '__';
+
+SELECT * FROM Alunos WHERE turma IS NULL;
+
+UPDATE Alunos SET idade = 24 WHERE id = 6;
+UPDATE Alunos SET idade = 24, nome = 'Ingrid' WHERE id = 6;
+UPDATE Alunos SET turma = NULL WHERE id = 1;
+
+DELETE FROM Alunos WHERE id = 7
